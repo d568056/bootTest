@@ -19,9 +19,9 @@ public class EtlRunner implements CommandLineRunner {
 
     private Employee getEmployee(){
         Employee e = new Employee();
-        e.setId(100);
-        e.setName("Nikhil");
-        e.setAddress("Brabazon Street,London");
+        e.setId(107);
+        e.setName("Tarling");
+        e.setAddress("All Saints,London");
         return e;
 
     }
