@@ -3,8 +3,9 @@ package com.sp.cloud.conf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
+//import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,26 +22,26 @@ import javax.sql.DataSource;
 @EnableAutoConfiguration
 public class ApplicationConfiguration {
 
-   /* @Value("${spring.datasource.url}")
+    @Value("${spring.datasource.url}")
     private String url;
     @Value("${spring.datasource.username}")
     private String userName;
     @Value("${spring.datasource.password}")
     private String password;
     @Value("${spring.datasource.driverClassName}")
-    private String driverClassName;*/
+    private String driverClassName;
 
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource(){
-        return DataSourceBuilder.create().build();
-        /*DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        //return DataSourceBuilder.create().build();
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driverClassName);
         dataSource.setUrl(url);
         dataSource.setUsername(userName);
         dataSource.setPassword(password);
-        return dataSource;*/
+        return dataSource;
     }
     @Bean
     public JdbcTemplate jdbcTemplate(){
